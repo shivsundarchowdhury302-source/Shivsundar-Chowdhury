@@ -1,0 +1,143 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-destructive-soft: var(--destructive-soft);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: #fff9f6;
+  --foreground: #49383b;
+  --card: oklch(1 0 0);
+  --card-foreground: #49383b;
+  --popover: oklch(1 0 0);
+  --popover-foreground: #49383b;
+  --primary: #c96f78;
+  --primary-foreground: oklch(0.985 0.003 250);
+  --secondary: #f9e9e8;
+  --secondary-foreground: #8f454e;
+  --muted: #f9e9e8;
+  --muted-foreground: #795f64;
+  --accent: #f2d5d7;
+  --accent-foreground: #8f454e;
+  --success: #91a994;
+  --success-foreground: oklch(0.99 0.01 158);
+  --success-soft: #edf3ee;
+  --warning: oklch(0.7 0.14 70);
+  --warning-soft: oklch(0.96 0.04 80);
+  --destructive: oklch(0.57 0.2 27);
+  --destructive-foreground: oklch(0.985 0.003 250);
+  --destructive-soft: oklch(0.96 0.03 27);
+  --border: #ead9da;
+  --input: #dfc5c9;
+  --ring: #c96f78;
+  --chart-1: #8f454e;
+  --chart-2: #91a994;
+  --chart-3: oklch(0.62 0.06 240);
+  --chart-4: oklch(0.78 0.1 158);
+  --chart-5: oklch(0.7 0.14 70);
+  --sidebar: #8f454e;
+  --sidebar-foreground: #fff9f6;
+  --sidebar-primary: #71343d;
+  --sidebar-primary-foreground: oklch(0.985 0.003 250);
+  --sidebar-accent: #a35b65;
+  --sidebar-accent-foreground: #fff9f6;
+  --sidebar-border: #af6b74;
+  --sidebar-ring: oklch(0.58 0.13 158);
+  --shadow-card:
+    0 1px 2px oklch(0.24 0.06 262 / 0.04), 0 8px 24px -12px oklch(0.24 0.06 262 / 0.08);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@utility shadow-card {
+  box-shadow: var(--shadow-card);
+}
+@utility num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}
+@utility eyebrow {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  font-weight: 600;
+  color: var(--color-muted-foreground);
+}
+
+@layer base {
+  * {
+    letter-spacing: 0 !important;
+  }
+  td,
+  th {
+    padding-block: 0.8rem;
+  }
+  th {
+    white-space: nowrap;
+  }
+  main {
+    min-width: 0;
+  }
+}

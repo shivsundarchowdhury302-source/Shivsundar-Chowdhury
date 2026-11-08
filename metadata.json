@@ -1,0 +1,6 @@
+{
+  "name": "WholesaleIQ",
+  "description": "Wholesale intelligence platform for customer, credit, pricing, and spreadsheet data operations.",
+  "permissions": [],
+  "capabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
